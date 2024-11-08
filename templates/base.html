@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" caontent="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  />
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>{% block title %} {% endblock %} - Twitter Spaces</title>
+
+
+</head>
+<body>
+  <div id="wrapper" class="clearfix">
+    <!--start wrapper-->
+    <div id="header" class="clearfix">
+      <!--start header-->
+      <Div>
+      
+      <div class="nav">
+        <!--start navigation-->
+ <!---       <ul>
+          <li class="title"><a href="/">Home</a></li>
+          <li><a href="{{ url_for('create') }}">Create</a></li>
+          <li><a href="{{ url_for('create2') }}">Create 2</a></li>
+          <li><a href="#">join us</a></li>
+        </ul>
+        <ul>
+          <li class="title"><a href="#">About</a></li>
+          <li><a href="#">our company</a></li>
+          <li><a href="#">pricing</a></li>
+          <li><a href="#">testimonials</a></li>
+        </ul>
+        <ul>
+          <li class="title"><a href="{{ url_for('page') }}"">Portfolio</a></li>
+          <li><a href="#">our clients</a></li>
+          <li><a href="#">user experience</a></li>
+          <li><a href="#">current projects</a></li>
+        </ul>--->
+      </div>
+      <!--end navigation-->
+
+      <!--end header-->
+      <div class="container">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+      <div id="footer">
+      <!--start footer-->
+        <div class="footer-text">
+          <p><span>&copy; A Twitter Space Social Experiment</span> | Web App made by:  <a href="https://twitter.com/jisifu">@jisifu</a></p>
+        </div>
+      </div>
+<!--end footer-->
+  </div>
+<!--end wrapper-->
+</body>
+</html>
